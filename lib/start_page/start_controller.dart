@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:turkeysh_sms_smart_home/utils/constant.dart';
 
+import '../helper/app_color.dart';
+
 class StartController extends GetxController {
 
   TextEditingController mobilNum = TextEditingController();
@@ -13,11 +15,9 @@ class StartController extends GetxController {
 
   saveUserInfo(){
     if(mobilNum.text.isNotEmpty && password.text.isNotEmpty) {
-      print(mobilNum.text);
-      print(password.text);
       if(mobilNum.text.length != 11 || !mobilNum.text.startsWith('09')){
         Get.snackbar(
-            'لطفا شماره سیمکارت را به فرمت صحیح وارد کنید', '', backgroundColor: Colors.red);
+            'لطفا شماره سیمکارت را به فرمت صحیح وارد کنید', '', backgroundColor: AppColor.foregroundColor);
         return;
       }
       isLoading.value = true;
@@ -31,7 +31,7 @@ class StartController extends GetxController {
       isLoading.value = false;
     }else{
       Get.snackbar(
-          'لطفا شماره سیمکارت و رمز خود را وارد کنید', '', backgroundColor: Colors.red);
+          'لطفا شماره سیمکارت و رمز خود را وارد کنید', '', backgroundColor: AppColor.foregroundColor,);
     }
 
   }

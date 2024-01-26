@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../helper/app_color.dart';
 import 'start_controller.dart';
 
 class StartPage extends StatelessWidget {
@@ -17,7 +18,6 @@ class StartPage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Stack(
             children: [
-
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -26,8 +26,6 @@ class StartPage extends StatelessWidget {
                   ),
                 ),
               ),
-
-
               Positioned(
                 right: 0,
                 left: 0,
@@ -74,29 +72,31 @@ class StartPage extends StatelessWidget {
                     const SizedBox(height: 30.0),
                     SizedBox(
                       width: width * 0.8,
-                      height: 40,
+                      height: height/15,
                       child: Obx(
-                          ()=> ElevatedButton(
+                        () => ElevatedButton(
                           onPressed: () {
-
                             controller.saveUserInfo();
-
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
+                            backgroundColor: AppColor.foregroundColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             padding: const EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 20.0),
                           ),
-                          child: controller.isLoading.value ? const Center(child: CircularProgressIndicator(),) : const Text(
-                            'ورود',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
-                            ),
-                          ),
+                          child: controller.isLoading.value
+                              ? const Center(
+                                  child: CircularProgressIndicator(),
+                                )
+                              : const Text(
+                                  'ورود',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                  ),
+                                ),
                         ),
                       ),
                     ),

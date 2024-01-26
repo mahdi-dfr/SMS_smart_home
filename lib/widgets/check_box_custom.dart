@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../helper/app_color.dart';
+
 class CheckboxExample extends StatefulWidget {
-  const CheckboxExample({super.key});
+  CheckboxExample({required this.onPressed, super.key});
+  Function(bool) onPressed;
 
   @override
   State<CheckboxExample> createState() => _CheckboxExampleState();
@@ -21,7 +24,7 @@ class _CheckboxExampleState extends State<CheckboxExample> {
       if (states.any(interactiveStates.contains)) {
         return Colors.blue;
       }
-      return Colors.red;
+      return AppColor.foregroundColor;
     }
 
     return Transform.scale(
@@ -32,9 +35,11 @@ class _CheckboxExampleState extends State<CheckboxExample> {
         value: isChecked,
 
         onChanged: (bool? value) {
+          widget.onPressed(value!);
           setState(() {
-            isChecked = value!;
+            isChecked = value;
           });
+
         },
       ),
     );

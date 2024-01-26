@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:turkeysh_sms_smart_home/bindings/my_bindings.dart';
+import 'package:turkeysh_sms_smart_home/helper/app_theme.dart';
 import 'package:turkeysh_sms_smart_home/home/HomePage.dart';
 import 'package:turkeysh_sms_smart_home/home/pages/board/board_settings.dart';
 import 'package:turkeysh_sms_smart_home/home/pages/export/export_setting.dart';
@@ -12,13 +12,12 @@ import 'package:turkeysh_sms_smart_home/home/pages/system_report/system_report.d
 import 'package:turkeysh_sms_smart_home/home/pages/time/time_setting.dart';
 import 'package:turkeysh_sms_smart_home/utils/constant.dart';
 
+import 'helper/my_bindings.dart';
 import 'start_page/start_page.dart';
 import 'utils/pages.dart';
-import 'widgets/senario_cntainer.dart';
 
 void main() async {
   await GetStorage.init();
-
   runApp(const MyApp());
 }
 
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'turkeysh_sms_smart_home',
+      title: 'perkyiot_sms',
       debugShowCheckedModeBanner: false,
       initialBinding: MyBindings(),
       getPages: [
@@ -49,6 +48,7 @@ class MyApp extends StatelessWidget {
           ? '/home'
           : '/start',
       locale: const Locale('fa'),
+      theme: themeData,
     );
   }
 }

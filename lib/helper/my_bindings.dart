@@ -1,5 +1,6 @@
 
 import 'package:get/get.dart';
+import 'package:turkeysh_sms_smart_home/helper/sms_helper.dart';
 import 'package:turkeysh_sms_smart_home/home/sms_controller.dart';
 import 'package:turkeysh_sms_smart_home/start_page/start_controller.dart';
 
@@ -8,6 +9,7 @@ class MyBindings extends Bindings{
   void dependencies() {
     Get.put(StartController());
     Get.put(SmsController());
+    Get.put(SMSHelper());
   }
 
 

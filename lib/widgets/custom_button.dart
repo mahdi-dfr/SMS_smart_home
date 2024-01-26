@@ -6,21 +6,23 @@ import '../../utils/constant.dart';
 class CustomButton extends StatelessWidget {
   final String buttonText;
   final Icon buttonIcon;
+  Function() onClick;
 
-  const CustomButton({
+  CustomButton({
     required this.buttonText,
     required this.buttonIcon,
+    required this.onClick,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 20, right: 20),
+      margin: const EdgeInsets.only(left: 20, right: 20),
       width: Get.width,
       height: Get.height / 16,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onClick,
           style: ElevatedButton.styleFrom(
               backgroundColor: forgroundColor,
               shape: RoundedRectangleBorder(

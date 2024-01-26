@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../helper/app_color.dart';
+
 
 class DropBox extends StatefulWidget {
   List<String> dropList;
@@ -38,7 +40,7 @@ class _DropBoxState extends State<DropBox> {
           children: [
             Text(
               widget.title,
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.white),
             ),
             const SizedBox(
               width: 5,
@@ -57,9 +59,10 @@ class _DropBoxState extends State<DropBox> {
           height: Get.height * 0.08,
           padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.red, width: 1),
+            border: Border.all(color:Colors.white, width: 1,),
             borderRadius: BorderRadius.circular(13),
-            color: Colors.white,
+            color: AppColor.foregroundColorLight,
+
           ),
           child: CustomDropDoawn(
             loading: widget.loading,
@@ -119,7 +122,7 @@ class _CustomDropDoawnState extends State<CustomDropDoawn> {
           isExpanded: true,
           hint: Text(
             widget.hint,
-            style: const TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14, color: Colors.white),
           ),
           items: widget.disable
               ? null
@@ -128,7 +131,7 @@ class _CustomDropDoawnState extends State<CustomDropDoawn> {
               value: value,
               child: Text(
                 value,
-                style: const TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14, ),
               ),
             );
           }).toList(),

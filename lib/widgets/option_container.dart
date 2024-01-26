@@ -1,7 +1,11 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:turkeysh_sms_smart_home/utils/constant.dart';
 import 'package:turkeysh_sms_smart_home/utils/pages.dart';
+
+import '../helper/app_color.dart';
 
 class OptionContainer extends StatelessWidget {
   double? widthContainer;
@@ -25,7 +29,7 @@ class OptionContainer extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 8,
-            backgroundColor: Colors.red,
+            backgroundColor: AppColor.foregroundColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50.0),
             ),
