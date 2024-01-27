@@ -17,7 +17,7 @@ class OptionContainer extends StatelessWidget {
       {required this.titleText,
       required this.widthContainer,
       required this.onClick,
-      this.textSize = 17,
+      this.textSize = 14,
       Key? key})
       : super(key: key);
 

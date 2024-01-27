@@ -8,14 +8,9 @@ import 'package:turkeysh_sms_smart_home/widgets/option_container.dart';
 
 import '../widgets/custom_app_bar.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   final controller = ScrollController();
   final _advancedDrawerController = AdvancedDrawerController();
   final smsController = Get.find<SmsController>();
@@ -73,14 +68,14 @@ class _HomePageState extends State<HomePage> {
                     shape: BoxShape.circle,
                   ),
                   child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: Colors.white),
-                      child: Image.asset(
-                        'assets/images/logo_wide2.png',
-                        width: Get.width,
-                      ), )
-              ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: Colors.white),
+                    child: Image.asset(
+                      'assets/images/logo_wide2.png',
+                      width: Get.width,
+                    ),
+                  )),
               ListTile(
                 onTap: () {
                   Get.toNamed(RoutsConstName.start);
@@ -110,8 +105,8 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 onTap: () {},
-                leading: const Icon(Icons.info_outline_rounded,
-                    color: Colors.black),
+                leading:
+                    const Icon(Icons.info_outline_rounded, color: Colors.black),
                 title: const Text('درباره ما',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.black)),
@@ -123,139 +118,154 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: CustomAppBar(
           height: 150,
+          haveBackButton: false,
+          onMenuClicked: (){
+            _handleMenuButtonPressed();
+          },
         ),
-        body: SafeArea(
-          child: Container(
-              margin: const EdgeInsets.only(top: 24.0),
-              child: SingleChildScrollView(
-                controller: controller,
-                child: Center(
-                  child: SingleChildScrollView(
-                    physics: const ScrollPhysics(),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
-                      child: Column(
-                        // ignore: prefer_const_literals_to_create_immutables
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 8,
+              ),
+              const Text(
+                'شرکت ابزار صنعت موج ساز',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      OptionContainer(
+                        titleText: 'تنظیمات عمومی',
+                        widthContainer: MediaQuery.sizeOf(context).width / 2,
+                        onClick: () {
+                          Get.toNamed(RoutsConstName.regular);
+                        },
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const SizedBox(
-                            height: 30,
-                          ),
                           OptionContainer(
-                            titleText: 'تنظیمات عمومی',
-                            widthContainer: Get.width / 2,
+                            titleText: 'تنظیمات برد رله',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
                             onClick: () {
-                              Get.toNamed(RoutsConstName.regular);
+                              Get.toNamed(RoutsConstName.board);
                             },
                           ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              OptionContainer(
-                                titleText: 'تنظیمات برد رله',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  Get.toNamed(RoutsConstName.board);
-                                },
-                              ),
-                              OptionContainer(
-                                titleText: 'گزارش گیری از سیستم',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  Get.toNamed(RoutsConstName.report);
-                                },
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              OptionContainer(
-                                titleText:
-                                'تنظیمات روشن و خاموش شدن موتورخانه',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  Get.toNamed(RoutsConstName.exportOn);
-                                },
-                                textSize: 14,
-                              ),
-                              OptionContainer(
-                                titleText: 'تنظیمات ساعت دستگاه',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  Get.toNamed(RoutsConstName.time);
-                                },
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              OptionContainer(
-                                titleText: 'وارد کردن دفترچه تلفن',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  Get.toNamed(RoutsConstName.phone);
-                                },
-                              ),
-                              OptionContainer(
-                                titleText: 'نمایش دفترچه تلفن',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  smsController.sendMessage(context, 'GN');
-                                },
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              OptionContainer(
-                                titleText: 'پاک کردن دفترچه تلفن',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  smsController.sendMessage(context, 'RN');
-                                },
-                              ),
-                              OptionContainer(
-                                titleText: 'تنظیم دما',
-                                widthContainer: Get.width / 2.5,
-                                onClick: () {
-                                  Get.toNamed(RoutsConstName.mod);
-                                },
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 30,
+                          OptionContainer(
+                            titleText: 'گزارش گیری از سیستم',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              Get.toNamed(RoutsConstName.report);
+                            },
                           ),
                         ],
                       ),
-                    ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OptionContainer(
+                            titleText: 'تنظیمات روشن و خاموش شدن موتورخانه',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              Get.toNamed(RoutsConstName.exportOn);
+                            },
+                            textSize: 12,
+                          ),
+                          OptionContainer(
+                            titleText: 'تنظیمات ساعت دستگاه',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              Get.toNamed(RoutsConstName.time);
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OptionContainer(
+                            titleText: 'وارد کردن دفترچه تلفن',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              Get.toNamed(RoutsConstName.phone);
+                            },
+                          ),
+                          OptionContainer(
+                            titleText: 'نمایش دفترچه تلفن',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              smsController.sendMessage(context, 'GN');
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OptionContainer(
+                            titleText: 'پاک کردن دفترچه تلفن',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              smsController.sendMessage(context, 'RN');
+                            },
+                          ),
+                          OptionContainer(
+                            titleText: 'تنظیم دما',
+                            widthContainer:
+                            MediaQuery.sizeOf(context).width / 2.5,
+                            onClick: () {
+                              Get.toNamed(RoutsConstName.mod);
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                    ],
                   ),
                 ),
               )
+            ],
           ),
-        ),
+        )
       ),
     );
   }
 
   void _handleMenuButtonPressed() {
-    // NOTICE: Manage Advanced Drawer state through the Controller.
-    // _advancedDrawerController.value = AdvancedDrawerValue.visible();
     _advancedDrawerController.showDrawer();
   }
 }
-

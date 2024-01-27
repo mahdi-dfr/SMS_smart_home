@@ -31,12 +31,14 @@ class _TimeSettingState extends State<TimeSetting> {
     });
 
     widget.timePrint = _time.toString();
-    time = (_time.hour.toString().length == 1 ? '0${_time.hour}' : _time.hour.toString()) +
-        (_time.minute.toString().length == 1 ? '0${_time.minute}' : _time.minute.toString());
+    time = (_time.hour.toString().length == 1
+            ? '0${_time.hour}'
+            : _time.hour.toString()) +
+        (_time.minute.toString().length == 1
+            ? '0${_time.minute}'
+            : _time.minute.toString());
     print(time);
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +47,9 @@ class _TimeSettingState extends State<TimeSetting> {
           height: 150,
         ),
         body: SafeArea(
-
             child: Container(
                 margin: const EdgeInsets.only(top: 24.0),
                 child: Column(children: [
-
                   SingleChildScrollView(
                       controller: controller,
                       child: Center(
@@ -62,15 +62,16 @@ class _TimeSettingState extends State<TimeSetting> {
                               'تنظیمات ساعت دستگاه',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20, color: Colors.white),
+                                  fontSize: 20,
+                                  color: Colors.white),
                             ),
                             const SizedBox(
                               height: 20,
                             ),
                             Container(
                               width: Get.width,
-                              margin: const EdgeInsets.only(
-                                  left: 20, right: 20),
+                              margin:
+                                  const EdgeInsets.only(left: 20, right: 20),
                               child: DropBox(
                                 dropList: const [
                                   'شنبه',
@@ -83,27 +84,27 @@ class _TimeSettingState extends State<TimeSetting> {
                                 ],
                                 title: 'انتخاب روز',
                                 onPressed: (value) {
-                                  switch(value.toString()){
+                                  switch (value.toString()) {
                                     case 'شنبه':
-                                      day='1';
+                                      day = '1';
                                       break;
                                     case 'یکشنبه':
-                                      day='2';
+                                      day = '2';
                                       break;
                                     case 'دوشنبه':
-                                      day='3';
+                                      day = '3';
                                       break;
                                     case 'سه شنبه':
-                                      day='4';
+                                      day = '4';
                                       break;
                                     case 'چهارشنبه':
-                                      day='5';
+                                      day = '5';
                                       break;
                                     case 'پنجشنبه':
-                                      day='6';
+                                      day = '6';
                                       break;
                                     case 'جمعه':
-                                      day='7';
+                                      day = '7';
                                       break;
                                   }
                                 },
@@ -128,17 +129,18 @@ class _TimeSettingState extends State<TimeSetting> {
                                 height: 60,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  border: Border.all(
-                                      width: 1, color: Colors.white),
+                                  border:
+                                      Border.all(width: 1, color: Colors.white),
                                 ),
-                                margin: const EdgeInsets.only(
-                                    left: 20, right: 20),
+                                margin:
+                                    const EdgeInsets.only(left: 20, right: 20),
                                 child: Center(
                                     child: Text(
                                   widget.timePrint,
                                   style: const TextStyle(
                                       fontSize: 17,
-                                      fontWeight: FontWeight.bold, color: Colors.white),
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
                                 )),
                               ),
                             ),
@@ -150,12 +152,14 @@ class _TimeSettingState extends State<TimeSetting> {
                                 buttonIcon:
                                     const Icon(Icons.done_outline_rounded),
                                 onClick: () {
-                                  if(time != null && day != null){
-                                    Get.find<SmsController>().sendMessage(context, 'ST${time!}${day!}');
-                                  }else{
-                                    Get.snackbar('خطا', 'لطفا ابتدا اطلاعات را تکمیل نمایید');
+                                  if (time != null && day != null) {
+                                    Get.find<SmsController>().sendMessage(
+                                        context, 'ST${time!}${day!}');
+                                  } else {
+                                    Get.snackbar('خطا',
+                                        'لطفا ابتدا اطلاعات را تکمیل نمایید',
+                                        backgroundColor: Colors.red);
                                   }
-
                                 }),
                           ],
                         ),

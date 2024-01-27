@@ -7,7 +7,7 @@ class SenarioContainer extends StatelessWidget {
   SenarioContainer(
       {required this.img,
       required this.title,
-      this.fontSize = 14,
+      this.fontSize = 13,
       required this.onSenarioPressed,
       Key? key})
       : super(key: key);

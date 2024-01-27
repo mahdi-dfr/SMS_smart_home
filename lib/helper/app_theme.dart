@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:turkeysh_sms_smart_home/helper/app_color.dart';
 
 var themeData = ThemeData(
-  scaffoldBackgroundColor: const Color(0xff02253f)
+  scaffoldBackgroundColor: AppColor.backgroundColor,
+  fontFamily: 'IranSans'
 );

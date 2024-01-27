@@ -102,12 +102,12 @@ class ModSetting extends StatelessWidget {
                                 if (int.parse(max.text) <= 100 && int.parse(min
                                     .text) <= 100) {
                                   Get.find<SmsController>().sendMessage(context,
-                                      'T3${max.text}${min.text}100000001');
+                                      'T700${max.text}00${min.text}100000000');
                                 }else{
-                                  Get.snackbar('خطا', 'دما نباید از 100 بیشتر باشد');
+                                  Get.snackbar('خطا', 'دما نباید از 100 بیشتر باشد', backgroundColor: Colors.red);
                                 }
                               }else{
-                                Get.snackbar('خطا', 'لطفا ابتدا اطلاعات را تکمیل نمایید');
+                                Get.snackbar('خطا', 'لطفا ابتدا اطلاعات را تکمیل نمایید', backgroundColor: Colors.red);
                               }
                             }),
                       ]),

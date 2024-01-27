@@ -33,16 +33,44 @@ class SystemEReport extends StatelessWidget {
                                   const EdgeInsets.only(left: 20, right: 20),
                               child: DropBox(
                                 dropList: const [
-                                  'ساعت روشن و خاموش شدن کل موتورخانه',
+                                  'گزارش خروجی 1',
+                                  'گزارش خروجی 2',
                                   'گزارش خروجی 3',
+                                  'گزارش خروجی 4',
+                                  'گزارش خروجی ها',
+                                  'گزارش سنسورها',
+                                  'گزارش برد های رله',
                                 ],
                                 title: 'گزارش گیری از سیستم',
                                 onPressed: (value) {
-                                  if (value.toString() ==
-                                      'ساعت روشن و خاموش شدن کل موتورخانه') {
-                                    reportNumber = '1';
-                                  } else {
-                                    reportNumber = '2';
+                                  switch (value.toString()) {
+                                    case 'گزارش خروجی 1':
+                                      reportNumber = '1';
+                                      break;
+
+                                    case 'گزارش خروجی 2':
+                                      reportNumber = '2';
+                                      break;
+
+                                    case 'گزارش خروجی 3':
+                                      reportNumber = '3';
+                                      break;
+
+                                    case 'گزارش خروجی 4':
+                                      reportNumber = '4';
+                                      break;
+
+                                    case 'گزارش خروجی ها':
+                                      reportNumber = '5';
+                                      break;
+
+                                    case 'گزارش سنسورها':
+                                      reportNumber = '6';
+                                      break;
+
+                                    case 'گزارش برد های رله':
+                                      reportNumber = '7';
+                                      break;
                                   }
                                 },
                               ),

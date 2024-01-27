@@ -65,7 +65,7 @@ class RegularSettings extends StatelessWidget {
                                   onSenarioPressed: () {
                                     smsController.sendMessage(context, '51');
                                   },
-                                  fontSize: 12,
+                                  fontSize: 11,
                                 ),
                                 SenarioContainer(
                                   img: 'assets/images/sound.svg',
@@ -73,7 +73,7 @@ class RegularSettings extends StatelessWidget {
                                   onSenarioPressed: () {
                                     smsController.sendMessage(context, '00');
                                   },
-                                  fontSize: 12,
+                                  fontSize: 11,
                                 ),
                               ],
                             ),

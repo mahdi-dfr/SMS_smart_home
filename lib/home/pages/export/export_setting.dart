@@ -97,12 +97,12 @@ class _ExportSettingState extends State<ExportSetting> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 17,
                         color: Colors.white
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     Container(
                       width: Get.width,
@@ -409,7 +409,7 @@ class _ExportSettingState extends State<ExportSetting> {
                             Get.find<SmsController>().sendMessage(context,
                                 'T${relayNumber!}${sendTimeOn!}${sendTimeOff!}${timerNumber!}$day');
                           }else{
-                            Get.snackbar('خطا', 'لطفا ابتدا اطلاعات را تکمیل نمایید');
+                            Get.snackbar('خطا', 'لطفا ابتدا اطلاعات را تکمیل نمایید', backgroundColor: Colors.red);
                           }
                         }),
                     const SizedBox(

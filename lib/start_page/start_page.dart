@@ -30,78 +30,90 @@ class StartPage extends StatelessWidget {
                 right: 0,
                 left: 0,
                 bottom: 10,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Image.asset(
-                        'assets/images/turkeysh_logo.png',
-                        width: width * 0.8,
-                        height: height * 0.3,
-                      ),
-                    ),
-                    const SizedBox(height: 40.0),
-                    TextFormField(
-                      controller: controller.mobilNum,
-                      keyboardType: TextInputType.phone,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.phone_android_rounded),
-                        hintText: 'شماره سیمکارت',
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20.0),
-                    TextFormField(
-                      controller: controller.password,
-                      keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.lock),
-                        hintText: 'رمز کاربر',
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                      obscureText: true,
-                    ),
-                    const SizedBox(height: 30.0),
-                    SizedBox(
-                      width: width * 0.8,
-                      height: height/15,
-                      child: Obx(
-                        () => ElevatedButton(
-                          onPressed: () {
-                            controller.saveUserInfo();
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColor.foregroundColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 20.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Image.asset(
+                            'assets/images/turkeysh_logo.png',
+                            width: width * 0.8,
+                            height: height * 0.5,
                           ),
-                          child: controller.isLoading.value
-                              ? const Center(
-                                  child: CircularProgressIndicator(),
-                                )
-                              : const Text(
-                                  'ورود',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.0,
-                                  ),
-                                ),
+
+                      ),
+                      const Text(
+                        'شرکت ابزار صنعت موج ساز',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,),
+                      ),
+                      const SizedBox(height: 20.0),
+                      TextFormField(
+                        controller: controller.mobilNum,
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.phone_android_rounded),
+                          hintText: 'شماره سیمکارت',
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide.none,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
+                      const SizedBox(height: 20.0),
+                      TextFormField(
+                        controller: controller.password,
+                        keyboardType: TextInputType.visiblePassword,
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.lock),
+                          hintText: 'رمز کاربر',
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                        obscureText: true,
+                      ),
+                      const SizedBox(height: 30.0),
+                      SizedBox(
+                        width: width * 0.8,
+                        height: height/15,
+                        child: Obx(
+                              () => ElevatedButton(
+                            onPressed: () {
+                              controller.saveUserInfo();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColor.foregroundColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 10.0, horizontal: 20.0),
+                            ),
+                            child: controller.isLoading.value
+                                ? const Center(
+                              child: CircularProgressIndicator(),
+                            )
+                                : const Text(
+                              'ورود',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          ),
+
+                        ),
+                      ),
+                      const SizedBox(height: 40,)
+                    ],
+                  ),
+                )
               ),
             ],
           ),

@@ -37,10 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   get_storage: ^2.1.1
   get: ^4.6.5
-  flutter_advanced_drawer: ^1.3.5
   flutter_svg: ^2.0.9
   day_night_time_picker: ^1.3.0+1
   material_dialogs: ^1.1.4
+  flutter_advanced_drawer: ^1.3.5
 
 dev_dependencies:
   flutter_test:
@@ -68,24 +68,14 @@ flutter:
   assets:
     - assets/images/turkeysh_logo.png
     - assets/images/back_pic2.jpg
-    - assets/images/turkeysh1.png
-    - assets/images/turkeysh.png
     - assets/images/turkeysh gray.png
-    - assets/images/turkeysh_full.png
-    - assets/images/turkeysh_full_back.png
-    - assets/images/door.svg
     - assets/images/file.svg
-    - assets/images/glass.svg
-    - assets/images/home.svg
-    - assets/images/house.svg
     - assets/images/lock.svg
-    - assets/images/moon.svg
     - assets/images/power.svg
     - assets/images/sound.svg
-    - assets/images/sun.svg
-    - assets/images/tv.svg
     - assets/images/unlock.svg
     - assets/images/logo_wide2.png
+    - assets/images/splash_img.jpg
 
   #    - assets/images/turkeysh gray.png
 
@@ -100,15 +90,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: IranSans
+      fonts:
+        - asset: assets/fonts/IRANSansWeb.woff
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    - family: IranSans bold
+      fonts:
+        - asset: assets/fonts/IRANSansWeb_Bold.woff2
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

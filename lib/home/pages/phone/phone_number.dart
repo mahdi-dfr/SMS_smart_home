@@ -102,11 +102,13 @@ class PhoneSetting extends StatelessWidget {
                                       '${'N${recordNumber!}${phoneNumber.text}'}*');
                                 } else {
                                   Get.snackbar(
-                                      'خطا', 'فرمت شماره موبایل صحیح نمی باشد');
+                                      'خطا', 'فرمت شماره موبایل صحیح نمی باشد',
+                                      backgroundColor: Colors.red);
                                 }
                               } else {
                                 Get.snackbar(
-                                    'خطا', 'لطفا اطلاعات را تکمیل نمایید');
+                                    'خطا', 'لطفا اطلاعات را تکمیل نمایید',
+                                    backgroundColor: Colors.red);
                               }
                             }),
                       ])))
