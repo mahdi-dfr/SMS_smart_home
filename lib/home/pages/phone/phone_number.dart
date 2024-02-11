@@ -32,7 +32,7 @@ class PhoneSetting extends StatelessWidget {
                           height: 20,
                         ),
                         const Text(
-                          'وارد کردن دفترجه تلفن',
+                          'وارد کردن دفترچه تلفن',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -79,7 +79,7 @@ class PhoneSetting extends StatelessWidget {
                               prefixIcon:
                                   const Icon(Icons.phone_android_rounded),
                               hintText: 'شماره سیمکارت',
-                              hintStyle: TextStyle(color: Colors.grey),
+                              hintStyle: const TextStyle(color: Colors.grey),
                               filled: true,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -99,7 +99,7 @@ class PhoneSetting extends StatelessWidget {
                                   phoneNumber.text.isNotEmpty) {
                                 if (phoneNumber.text.length == 11) {
                                   Get.find<SmsController>().sendMessage(context,
-                                      '${'N${recordNumber!}${phoneNumber.text}'}*');
+                                      '${'SN${recordNumber!}${phoneNumber.text}'}*');
                                 } else {
                                   Get.snackbar(
                                       'خطا', 'فرمت شماره موبایل صحیح نمی باشد',
