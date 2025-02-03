@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: RoutsConstName.phone, page: () => PhoneSetting()),
         GetPage(name: RoutsConstName.exportOn, page: () => ExportSetting()),
       ],
-      home: SplashScreen(),
+      home: HomePage(),
       defaultTransition: Transition.topLevel,
       transitionDuration: const Duration(milliseconds: 500),
 

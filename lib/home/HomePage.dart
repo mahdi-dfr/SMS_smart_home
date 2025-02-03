@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
 
   final controller = ScrollController();
   final _advancedDrawerController = AdvancedDrawerController();
-  final smsController = Get.find<SmsController>();
+  // final smsController = Get.find<SmsController>();
 
   @override
   Widget build(BuildContext context) {
@@ -185,7 +185,7 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           OptionContainer(
-                            titleText: 'تنظیمات روشن و خاموش شدن موتورخانه',
+                            titleText: 'تنظیمات روشن و خاموش شدن دستگاه',
                             widthContainer:
                             MediaQuery.sizeOf(context).width / 2.5,
                             onClick: () {
@@ -222,7 +222,7 @@ class HomePage extends StatelessWidget {
                             widthContainer:
                             MediaQuery.sizeOf(context).width / 2.5,
                             onClick: () {
-                              smsController.sendMessage(context, 'GN');
+                              Get.find<SmsController>().sendMessage(context, 'GN');
                             },
                           ),
                         ],
@@ -238,7 +238,7 @@ class HomePage extends StatelessWidget {
                             widthContainer:
                             MediaQuery.sizeOf(context).width / 2.5,
                             onClick: () {
-                              smsController.sendMessage(context, 'RN');
+                              Get.find<SmsController>().sendMessage(context, 'RN');
                             },
                           ),
                           OptionContainer(

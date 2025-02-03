@@ -61,7 +61,7 @@ class _BoardsettingState extends State<Boardsetting> {
                               dropList: const [
                                 '1',
                                 '2',
-                                // '3',
+                                '3',
                                 // '4',
                                 // '5',
                                 // '6',
@@ -92,318 +92,163 @@ class _BoardsettingState extends State<Boardsetting> {
                         Container(
                           width: Get.width,
                           margin: const EdgeInsets.all(20),
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
                           decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 1,
-                                color: AppColor.foregroundColor,
-                              ),
+
+                              border:
+                              Border.all(width: 1, color: Colors.red),
                               borderRadius: BorderRadius.circular(15)),
-                          child: Obx(() {
-                            return board1.value
-                                ? Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Column(
                                     children: [
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[0] = '1';
-                                              } else {
-                                                boards[0] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'send SMS',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[1] = '1';
-                                              } else {
-                                                boards[1] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'Ring',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[2] = '1';
-                                              } else {
-                                                boards[2] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'Power SMS',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[3] = '1';
-                                              } else {
-                                                boards[3] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'timer',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(
-                                        height: 12,
-                                      ),
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '1',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
                                     ],
-                                  )
-                                : Column(
+                                  ),
+                                  Column(
                                     children: [
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[0] = '1';
-                                              } else {
-                                                boards[0] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'فعال سازی و غیرفعال سازی موتورخانه',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[1] = '1';
-                                              } else {
-                                                boards[1] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'فعال سازی siren',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[2] = '1';
-                                              } else {
-                                                boards[2] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 1',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[3] = '1';
-                                              } else {
-                                                boards[3] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 2',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[4] = '1';
-                                              } else {
-                                                boards[4] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 3',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[5] = '1';
-                                              } else {
-                                                boards[5] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 4',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[6] = '1';
-                                              } else {
-                                                boards[6] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 1 و 2',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[7] = '1';
-                                              } else {
-                                                boards[7] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 3 و 4',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CheckboxExample(
-                                            onPressed: (value) {
-                                              if (value) {
-                                                boards[8] = '1';
-                                              } else {
-                                                boards[8] = '0';
-                                              }
-                                            },
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          const Text(
-                                            'میانگین براساس سنسور 1و2و3و4',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(
-                                        height: 12,
-                                      ),
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '2',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
                                     ],
-                                  );
-                          }),
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '3',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '4',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '5',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '6',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '7',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '8',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '9',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '10',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '11',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      const Text(
+                                        '12',
+                                        style: TextStyle(color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                            ],
+                          ),
                         ),
                         const SizedBox(
                           height: 25,

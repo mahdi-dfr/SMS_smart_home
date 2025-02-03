@@ -93,7 +93,7 @@ class _ExportSettingState extends State<ExportSetting> {
                       height: 20,
                     ),
                     const Text(
-                      'تنظیمات زمانی روشن و خاموش شدن موتورخانه',
+                      'تنظیمات زمانی روشن و خاموش شدن دستگاه',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -112,13 +112,13 @@ class _ExportSettingState extends State<ExportSetting> {
                         dropList: const [
                           '1',
                           '2',
-                          // '3',
-                          // '4',
-                          // '5',
-                          // '6',
-                          // '7',
-                          // '8',
-                          // '9',
+                          '3',
+                          '4',
+                          '5',
+                          '6',
+                          '7',
+                          '8',
+                          '9',
                           // '10',
                           // '11',
                           // '12'

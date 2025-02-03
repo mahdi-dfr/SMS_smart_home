@@ -20,11 +20,10 @@ class RegularSettings extends StatelessWidget {
         body: SafeArea(
             child: Container(
                 margin: const EdgeInsets.only(top: 24.0),
-                child: Column(children: [
-
-                  SingleChildScrollView(
-                    controller: controller,
-                    child: Center(
+                child: SingleChildScrollView(
+                  child: Column(children: [
+                  
+                    Center(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -61,7 +60,7 @@ class RegularSettings extends StatelessWidget {
                               children: [
                                 SenarioContainer(
                                   img: 'assets/images/sound.svg',
-                                  title: 'روشن کردن کل موتورخانه',
+                                  title: 'رله یک فعال',
                                   onSenarioPressed: () {
                                     smsController.sendMessage(context, '51');
                                   },
@@ -69,7 +68,7 @@ class RegularSettings extends StatelessWidget {
                                 ),
                                 SenarioContainer(
                                   img: 'assets/images/sound.svg',
-                                  title: 'خاموش کردن کل موتورخانه',
+                                  title: 'رله دو فعال',
                                   onSenarioPressed: () {
                                     smsController.sendMessage(context, '00');
                                   },
@@ -93,7 +92,7 @@ class RegularSettings extends StatelessWidget {
                                 ),
                                 SenarioContainer(
                                   img: 'assets/images/power.svg',
-                                  title: 'فعال سازی Hazard',
+                                  title: 'رله دو غیرفعال',
                                   onSenarioPressed: () {
                                     smsController.sendMessage(context, '50');
                                   },
@@ -103,12 +102,51 @@ class RegularSettings extends StatelessWidget {
                             const SizedBox(
                               height: 15,
                             ),
-
+                    
+                            Row(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SenarioContainer(
+                                  img: 'assets/images/moon.svg',
+                                  title: 'سناریو خوابیدن',
+                                  onSenarioPressed: () {},
+                                ),
+                                SenarioContainer(
+                                  img: 'assets/images/home.svg',
+                                  title: 'رله سه غیرفعال',
+                                  onSenarioPressed: () {},
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SenarioContainer(
+                                  img: 'assets/images/house.svg',
+                                  title: 'رله چهار غیرفعال',
+                                  onSenarioPressed: () {},
+                                ),
+                                SenarioContainer(
+                                  img: 'assets/images/tv.svg',
+                                  title: 'سناریو تماشای فیلم',
+                                  onSenarioPressed: () {},
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                    
                           ],
                         ),
                       ),
-                    ),
-                  )
-                ]))));
+                    )
+                  ]),
+                ))));
   }
 }
