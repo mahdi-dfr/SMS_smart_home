@@ -4,7 +4,6 @@ import 'package:turkeysh_sms_smart_home/home/sms_controller.dart';
 import 'package:turkeysh_sms_smart_home/widgets/check_box_custom.dart';
 import 'package:turkeysh_sms_smart_home/widgets/custom_button.dart';
 
-import '../../../helper/app_color.dart';
 import '../../../widgets/custom_app_bar.dart';
 import '../../../widgets/drop_down_custom.dart';
 
@@ -93,53 +92,86 @@ class _BoardsettingState extends State<Boardsetting> {
                           width: Get.width,
                           margin: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
-
-                              border:
-                              Border.all(width: 1, color: Colors.red),
+                              border: Border.all(width: 1, color: Colors.red),
                               borderRadius: BorderRadius.circular(15)),
                           child: Column(
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[0] = '1';
+                                          } else {
+                                            boards[0] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '1',
                                         style: TextStyle(
-                                          color: Colors.white,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[1] = '1';
+                                          } else {
+                                            boards[1] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '2',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[2] = '1';
+                                          } else {
+                                            boards[2] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '3',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[3] = '1';
+                                          } else {
+                                            boards[3] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '4',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -151,44 +183,80 @@ class _BoardsettingState extends State<Boardsetting> {
                               ),
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[4] = '1';
+                                          } else {
+                                            boards[4] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '5',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[5] = '1';
+                                          } else {
+                                            boards[5] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '6',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[6] = '1';
+                                          } else {
+                                            boards[6] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '7',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[7] = '1';
+                                          } else {
+                                            boards[7] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '8',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -200,44 +268,80 @@ class _BoardsettingState extends State<Boardsetting> {
                               ),
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[8] = '1';
+                                          } else {
+                                            boards[8] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '9',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[9] = '1';
+                                          } else {
+                                            boards[9] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '10',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[10] = '1';
+                                          } else {
+                                            boards[10] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '11',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      CheckboxExample(onPressed: (bool ) {  },),
+                                      CheckboxExample(
+                                        onPressed: (value) {
+                                          if (value) {
+                                            boards[11] = '1';
+                                          } else {
+                                            boards[11] = '0';
+                                          }
+                                        },
+                                      ),
                                       const Text(
                                         '12',
-                                        style: TextStyle(color: Colors.white,
+                                        style: TextStyle(
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -255,7 +359,7 @@ class _BoardsettingState extends State<Boardsetting> {
                         ),
                         CustomButton(
                           buttonText: 'ارسال',
-                          buttonIcon: const Icon(Icons.done_outline_rounded),
+                          buttonIcon: const Icon(Icons.done_outline_rounded,),
                           onClick: () {
                             board = boards[0] +
                                 boards[1] +
@@ -271,7 +375,7 @@ class _BoardsettingState extends State<Boardsetting> {
                                 boards[11];
                             if (boardNumber != null) {
                               Get.find<SmsController>().sendMessage(
-                                  context, 'RB${boardNumber!}${board!}');
+                                  context, 'RB${boardNumber!}$board');
                             } else {
                               Get.snackbar(
                                   'خطا', 'لطفا ابتدا اطلاعات را تکمیل نمایید',

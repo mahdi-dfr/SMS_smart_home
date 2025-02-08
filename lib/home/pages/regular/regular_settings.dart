@@ -37,16 +37,16 @@ class RegularSettings extends StatelessWidget {
                               children: [
                                 SenarioContainer(
                                   img: 'assets/images/unlock.svg',
-                                  title: 'روشن کردن مشعل',
+                                  title: 'خروج از سناریو',
                                   onSenarioPressed: () {
-                                    smsController.sendMessage(context, '10');
+                                    smsController.sendMessage(context, '*10');
                                   },
                                 ),
                                 SenarioContainer(
                                   img: 'assets/images/lock.svg',
-                                  title: 'خاموش کردن مشعل',
+                                  title: 'رله یک غیرفعال',
                                   onSenarioPressed: () {
-                                    smsController.sendMessage(context, '11');
+                                    smsController.sendMessage(context, '*11');
                                   },
                                 ),
                               ],
@@ -62,7 +62,7 @@ class RegularSettings extends StatelessWidget {
                                   img: 'assets/images/sound.svg',
                                   title: 'رله یک فعال',
                                   onSenarioPressed: () {
-                                    smsController.sendMessage(context, '51');
+                                    smsController.sendMessage(context, '*10');
                                   },
                                   fontSize: 11,
                                 ),
@@ -70,7 +70,7 @@ class RegularSettings extends StatelessWidget {
                                   img: 'assets/images/sound.svg',
                                   title: 'رله دو فعال',
                                   onSenarioPressed: () {
-                                    smsController.sendMessage(context, '00');
+                                    smsController.sendMessage(context, '*00');
                                   },
                                   fontSize: 11,
                                 ),
@@ -87,14 +87,14 @@ class RegularSettings extends StatelessWidget {
                                   img: 'assets/images/file.svg',
                                   title: 'وضعیت سیستم',
                                   onSenarioPressed: () {
-                                    smsController.sendMessage(context, '01');
+                                    smsController.sendMessage(context, '*01');
                                   },
                                 ),
                                 SenarioContainer(
                                   img: 'assets/images/power.svg',
                                   title: 'رله دو غیرفعال',
                                   onSenarioPressed: () {
-                                    smsController.sendMessage(context, '50');
+                                    smsController.sendMessage(context, '*50');
                                   },
                                 )
                               ],
@@ -115,10 +115,37 @@ class RegularSettings extends StatelessWidget {
                                 SenarioContainer(
                                   img: 'assets/images/home.svg',
                                   title: 'رله سه غیرفعال',
-                                  onSenarioPressed: () {},
+                                  onSenarioPressed: () {
+                                    smsController.sendMessage(context, '*20');
+                                  },
                                 )
                               ],
                             ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+
+                            Row(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SenarioContainer(
+                                  img: 'assets/images/moon.svg',
+                                  title: 'رله چهار فعال',
+                                  onSenarioPressed: () {
+                                    smsController.sendMessage(context, '*31');
+                                  },
+                                ),
+                                SenarioContainer(
+                                  img: 'assets/images/home.svg',
+                                  title: 'رله سه فعال',
+                                  onSenarioPressed: () {
+                                    smsController.sendMessage(context, '*41');
+                                  },
+                                )
+                              ],
+                            ),
+
                             const SizedBox(
                               height: 15,
                             ),
@@ -129,7 +156,9 @@ class RegularSettings extends StatelessWidget {
                                 SenarioContainer(
                                   img: 'assets/images/house.svg',
                                   title: 'رله چهار غیرفعال',
-                                  onSenarioPressed: () {},
+                                  onSenarioPressed: () {
+                                    smsController.sendMessage(context, '*21');
+                                  },
                                 ),
                                 SenarioContainer(
                                   img: 'assets/images/tv.svg',
